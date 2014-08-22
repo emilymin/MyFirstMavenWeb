@@ -6,6 +6,7 @@
 
     <view-state id="Species" view="Species">
         <transition on="submit" to="flavourAndSize">
+        <!--<evaluate expression="validator.validate()"/>-->
         </transition>
     </view-state>
     <view-state id="flavourAndSize" view="flavourAndSize">
@@ -17,9 +18,9 @@
         </transition>
     </view-state>
     <view-state id="orderConfirmed" view="orderConfirmed">
-        <transition on="returnToIndex" to="returnToIndex">
+        <transition on="returnToIndex" to="returnToSuccess">
         </transition>
     </view-state>
-    <end-state id="returnToIndex" view="externalRedirect:servletRelative:/index.jsp">
+    <end-state id="returnToSuccess" view="externalRedirect:servletRelative:/success.jsp">
     </end-state>
 </flow>

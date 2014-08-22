@@ -4,7 +4,7 @@
 <head>
 </head>
 <body>
-    <h1>Tasty Pizza</h1>
-    <a href="pizza/bookingPizza.do">Order Now</a>
+    <h1>Success</h1>
+    <a href="${flowExecutionUrl}&_eventId=returnToIndex">Submit</a>
 </body>
 </html>
