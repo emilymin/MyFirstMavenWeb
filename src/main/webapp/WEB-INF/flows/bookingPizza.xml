@@ -4,23 +4,59 @@
       xsi:schemaLocation="http://www.springframework.org/schema/webflow
       http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
-    <view-state id="Species" view="Species">
-        <transition on="submit" to="flavourAndSize">
-        <!--<evaluate expression="validator.validate()"/>-->
-        </transition>
+    <on-start>
+        <evaluate expression="addPizzaService.createPizza()" result="flowScope.pizza"/>
+    </on-start>
+
+    <!--<action-state id="Species">-->
+        <!--<action bean="AddPizzaServiceImpl" method="addPizzaSpecies" />-->
+        <!--<transition on="success" to="orderConfirmed" />-->
+    <!--</action-state>-->
+
+    <view-state id="Species" view="species" model="pizza">
+        <binder>
+            <binding property="species" />
+        </binder>
+        <transition on="confirm" to="orderConfirmed" />
     </view-state>
-    <view-state id="flavourAndSize" view="flavourAndSize">
-        <transition on="submit" to="contact">
-        </transition>
+
+    <!--<view-state id="Species" model="speciesForm">-->
+        <!--<on-entry>-->
+            <!--<evaluate expression="pizza.setSpecies()" result="viewScope.species" />-->
+        <!--</on-entry>-->
+        <!--<transition on="confirm" to="orderConfirmed">-->
+        <!--</transition>-->
+    <!--</view-state>-->
+
+    <!--<view-state id="Species" model="speciesForm">-->
+        <!--<binder>-->
+            <!--<binding property="species"/>-->
+        <!--</binder>-->
+        <!--<transition on="submit" to="submitPizza">-->
+            <!--<set name="pizza" value="flowScope.pizza"></set>-->
+            <!--<set name="species" value="species"></set>-->
+        <!--</transition>-->
+    <!--</view-state>-->
+
+    <!--<action-state id="submitPizza">-->
+        <!--<evaluate expression="addPizzaServiceImpl.addPizzaSpecies(species)"></evaluate>-->
+        <!--<transition on="confirm" to="orderConfirmed"></transition>-->
+    <!--</action-state>-->
+
+    <!--<view-state id="flavourAndSize" view="flavourAndSize">-->
+        <!--<transition on="submit" to="contact">-->
+        <!--</transition>-->
+    <!--</view-state>-->
+
+    <!--<view-state id="contact" view="contact">-->
+        <!--<transition on="confirm" to="orderConfirmed">-->
+        <!--</transition>-->
+    <!--</view-state>-->
+
+    <view-state id="orderConfirmed" view="orderConfirmed" model="pizza">
+        <transition on="returnToIndex" to="returnToSuccess" />
     </view-state>
-    <view-state id="contact" view="contact">
-        <transition on="confirm" to="orderConfirmed">
-        </transition>
-    </view-state>
-    <view-state id="orderConfirmed" view="orderConfirmed">
-        <transition on="returnToIndex" to="returnToSuccess">
-        </transition>
-    </view-state>
+
     <end-state id="returnToSuccess" view="externalRedirect:servletRelative:/success.jsp">
     </end-state>
 </flow>

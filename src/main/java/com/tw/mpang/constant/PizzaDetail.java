@@ -1,6 +1,6 @@
 package com.tw.mpang.constant;
 
-public class Constant {
+public class PizzaDetail {
     public static final String Pizza_Species_BAKEWARE = "Bakeware";
     public static final String Pizza_Species_THICK = "Thick";
     public static final String Pizza_Species_CRISP = "Crisp";
@@ -11,7 +11,7 @@ public class Constant {
     public static final String Pizza_Flavour_Hawaiian = "Hawaiian";
     public static final String Pizza_Flavour_Meatza = "Meatza";
 
-    public static final int Pizza_Size_19 = 19;
-    public static final int Pizza_Size_23 = 23;
-    public static final int Pizza_Size_29 = 29;
+    public static final String Pizza_Size_19 = "19";
+    public static final String Pizza_Size_23 = "23";
+    public static final String Pizza_Size_29 = "29";
 }

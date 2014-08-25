@@ -1,17 +1,31 @@
 package com.tw.mpang.model;
 
-import com.tw.mpang.constant.Constant;
+import com.tw.mpang.constant.PizzaDetail;
 
 import java.io.Serializable;
 
 public class Pizza implements Serializable{
     private static final long serialVersionUID = 1951520003958305899L;
 
-    private Constant species;
-    private Constant flavour;
-    private Constant size;
+    private String species;
+    private PizzaDetail flavour;
+    private PizzaDetail size;
 
-    public Pizza(Constant species, Constant flavour, Constant size) {
+    public Pizza() {
+        System.out.println(String.format("constructor: this is pizza %s", this));
+
+    }
+
+    @Override
+    public String toString() {
+        return "Pizza{" +
+                "species='" + species + '\'' +
+                ", flavour=" + flavour +
+                ", size=" + size +
+                '}' + super.toString();
+    }
+
+    public Pizza(String species, PizzaDetail flavour, PizzaDetail size) {
         this.species = species;
         this.flavour = flavour;
         this.size = size;
@@ -21,27 +35,30 @@ public class Pizza implements Serializable{
         return serialVersionUID;
     }
 
-    public Constant getSpecies() {
+    public String getSpecies() {
+        System.out.println(String.format("this is my pizza %s", species));
+        System.out.println(String.format("this is pizza %s", this));
         return species;
     }
 
-    public void setSpecies(Constant species) {
+    public void setSpecies(String species) {
+        System.out.println(String.format("set speciese is pizza %s", species));
         this.species = species;
     }
 
-    public Constant getFlavour() {
+    public PizzaDetail getFlavour() {
         return flavour;
     }
 
-    public void setFlavour(Constant flavour) {
+    public void setFlavour(PizzaDetail flavour) {
         this.flavour = flavour;
     }
 
-    public Constant getSize() {
+    public PizzaDetail getSize() {
         return size;
     }
 
-    public void setSize(Constant size) {
+    public void setSize(PizzaDetail size) {
         this.size = size;
     }
 

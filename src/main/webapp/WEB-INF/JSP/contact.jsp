@@ -5,6 +5,8 @@
 </head>
 <body>
     <h1>contact</h1>
-    <a href="${flowExecutionUrl}&_eventId=confirm">Submit</a>
+    <form>
+        <a href="${flowExecutionUrl}&_eventId=confirm">Submit</a>
+    </form>
 </body>
 </html>

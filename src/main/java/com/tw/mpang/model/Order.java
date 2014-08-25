@@ -1,26 +1,26 @@
 package com.tw.mpang.model;
 
-import com.tw.mpang.constant.Constant;
+import com.tw.mpang.constant.PizzaDetail;
 
 import java.text.DecimalFormat;
 import java.util.Map;
 
 public class Order {
     private String id;
-    private Map<Constant, Integer> pizzaMap;
+    private Map<PizzaDetail, Integer> pizzaMap;
     private Customer customer;
     private DecimalFormat amount;
 
-    public Order(Map<Constant, Integer> pizzaMap, Customer customer) {
+    public Order(Map<PizzaDetail, Integer> pizzaMap, Customer customer) {
         this.pizzaMap = pizzaMap;
         this.customer = customer;
     }
 
-    public Map<Constant, Integer> getPizzaMap() {
+    public Map<PizzaDetail, Integer> getPizzaMap() {
         return pizzaMap;
     }
 
-    public void setPizzaMap(Map<Constant, Integer> pizzaMap) {
+    public void setPizzaMap(Map<PizzaDetail, Integer> pizzaMap) {
         this.pizzaMap = pizzaMap;
     }
 
